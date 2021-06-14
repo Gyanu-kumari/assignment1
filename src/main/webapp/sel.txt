@@ -1,0 +1,20 @@
+http://www.practiceselenium.com/welcome.html
+
+import org.testng.Assert;
+public class PageTitleVerification
+{   
+private static WebDriver driver = new ChromeDriver();
+Assert.assertEquals("welcome", driver.getTitle());
+
+@Test
+public void PageTitleVerify(){
+if(driver.getTitle().contains("welcome"))
+  
+    System.out.println("pass ");
+else
+    
+    System.out.println("fail");
+}
+}
+
+.wsb-button-content

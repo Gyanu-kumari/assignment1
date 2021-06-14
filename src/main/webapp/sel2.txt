@@ -1,0 +1,28 @@
+package com.sonata.sel;
+	import org.openqa.selenium.By;
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+//import java.util.concurrent.TimeUnit;
+	public class TextMatch{
+	   public static void main(String[] args) 
+	   {
+	      System.setProperty("webdriver.ie.driver","D:\\iE32\\IEDriverServer.exe");
+	       WebDriver driver = new InternetExplorerDriver();
+	      String url = "http://www.practiceselenium.com";
+	     // driver.navigate(url);
+	      driver.navigate().to(url);
+	      
+	      WebElement l=driver.findElement(By.xpath("//*[text()='Menu']"));
+	      WebElement m=driver.findElement(By.xpath("//*[contains(text(),'Green Tea')]"));
+	      WebElement m1=driver.findElement(By.xpath("//*[contains(text(),'Red Tea')]"));
+	      WebElement m2=driver.findElement(By.xpath("//*[contains(text(),'Oolong Tea')]"));
+	      System.out.println("Element with text(): " + l.getText());
+	      System.out.println("Element with contains(): " + m.getText());
+	      System.out.println("Element with contains(): " + m1.getText());
+	      System.out.println("Element with contains(): " + m2.getText());
+	      driver.quit();
+	   }
+	}
